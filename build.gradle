@@ -42,8 +42,18 @@ repositories {
     }
 }
 
+// GameTests live in their own source set, so they are not packed into the mod jar. They see the main classes and
+// the same Create/NeoForge dependencies, and load as part of this mod in the gameTestServer run.
+sourceSets {
+    gametest {
+        compileClasspath += sourceSets.main.output + sourceSets.main.compileClasspath
+        runtimeClasspath += sourceSets.main.output + sourceSets.main.runtimeClasspath
+    }
+}
+
 neoForge {
     version = neo_version
+    addModdingDependenciesTo(sourceSets.gametest)
 
     if (parchment_version != 'none') {
         parchment {
@@ -55,6 +65,7 @@ neoForge {
     mods {
         "${mod_id}" {
             sourceSet(sourceSets.main)
+            sourceSet(sourceSets.gametest)
         }
     }
 
@@ -75,6 +86,13 @@ neoForge {
             server()
             gameDirectory = project.file('run/server')
             programArgument '--nogui'
+            systemProperty 'neoforge.enabledGameTestNamespaces', mod_id
+        }
+
+        // ./gradlew runGameTestServer: runs every GameTest of this mod and exits non-zero if one fails.
+        gameTestServer {
+            type = 'gameTestServer'
+            gameDirectory = project.file('run/gametest')
             systemProperty 'neoforge.enabledGameTestNamespaces', mod_id
         }
 
@@ -132,6 +150,9 @@ var generateModMetadata = tasks.register('generateModMetadata', ProcessResources
 }
 sourceSets.main.resources.srcDir generateModMetadata
 neoForge.ideSyncTask generateModMetadata
+
+// Compile the GameTests on every build, so a broken test cannot slip in unnoticed.
+tasks.named('check') { dependsOn tasks.named('compileGametestJava') }
 
 tasks.withType(JavaCompile).configureEach {
     options.encoding = 'UTF-8'

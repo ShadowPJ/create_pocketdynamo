@@ -39,6 +39,18 @@ jobs:
       - name: Build
         run: ./gradlew build --console=plain
 
+      # Starts a headless dev server, runs every GameTest of the mod and exits non-zero if one fails.
+      - name: Run GameTests
+        run: ./gradlew runGameTestServer --console=plain
+
+      - name: Upload GameTest logs
+        if: failure()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: gametest-logs
+          path: run/gametest/logs/
+          if-no-files-found: ignore
+
       - name: Upload jar
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
         with:
