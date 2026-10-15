@@ -1,6 +1,6 @@
 name: Release
 
-# Push a tag like v0.1.0 to build the mod and publish a GitHub Release with the jar and the CHANGELOG notes.
+# Push a tag like v0.1.0-beta.1 to build the mod and publish a GitHub Release with the jar and the CHANGELOG notes.
 # Run it by hand (Actions > Release > Run workflow) for a dry run: same checks and build, nothing is published.
 on:
   push:

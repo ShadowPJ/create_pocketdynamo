@@ -3,15 +3,17 @@ import java.io.File;
 import javax.imageio.ImageIO;
 
 /**
- * Draws the mod logo (a copper gear with a lightning bolt) on a 32x32 pixel grid and scales it 4x to 128x128.
+ * Draws the mod logo (a copper gear with a lightning bolt) on a 32x32 pixel grid and scales it up. The default scale
+ * of 4 gives the 128x128 logo of the mod; any other integer gives a larger icon without losing sharpness.
  * <p>
  * Run from the project root with a plain JDK 21, no dependencies:
- * <pre>java tools/LogoGen.java src/main/resources/logo.png</pre>
+ * <pre>java tools/LogoGen.java src/main/resources/logo.png
+ * java tools/LogoGen.java docs/store/icon-512.png 16</pre>
  * The art is original to this project. A hand-made logo can replace the PNG at any time; this generator is then no
  * longer needed, and it must not be run on top of hand edits.
  */
 public class LogoGen {
-	static final int G = 32, SCALE = 4;
+	static final int G = 32;
 	static final int[] COPPER = { 0x4a2210, 0x8a4a28, 0xc87340, 0xe8985f, 0xffc896 };
 
 	static int shade(int[] p, double lit) { // lit in [-1, 1]
@@ -34,6 +36,7 @@ public class LogoGen {
 	}
 
 	public static void main(String[] a) throws Exception {
+		int SCALE = a.length > 1 ? Integer.parseInt(a[1]) : 4;
 		int[][] grid = new int[G][G]; // 0 = transparent, else 0xRRGGBB (alpha implied)
 		double cx = 15.5, cy = 15.5;
 		int teeth = 8;
