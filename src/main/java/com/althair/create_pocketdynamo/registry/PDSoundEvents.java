@@ -10,7 +10,8 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 
 /**
  * Sound events. Each id is mapped to actual audio in {@code assets/create_pocketdynamo/sounds.json}. The audio is
- * currently borrowed from vanilla Minecraft as a placeholder; to use custom audio, drop .ogg files under
+ * taken from vanilla Minecraft on purpose, by reference: the jar ships no audio file, so nothing of Mojang's is
+ * redistributed. To use custom audio instead, drop .ogg files under
  * {@code assets/create_pocketdynamo/sounds/} and point the entry in sounds.json at them. No code changes needed.
  */
 public class PDSoundEvents {
