@@ -72,11 +72,10 @@ public class MotorPickupTests {
 		player.setItemInHand(InteractionHand.MAIN_HAND, stack);
 		BlockPos floor = helper.absolutePos(MOTOR.below());
 		BlockHitResult onFloor = new BlockHitResult(Vec3.atCenterOf(floor).add(0, 0.5, 0), Direction.UP, floor, false);
-		String floorBefore = helper.getBlockState(MOTOR.below()).toString() + " abs=" + floor + " bounds=" + helper.getBounds();
 		InteractionResult placed = stack.useOn(new UseOnContext(player, InteractionHand.MAIN_HAND, onFloor));
 		helper.assertTrue(placed.consumesAction(), tier + " motor was not placed again: " + placed);
 		helper.assertTrue(helper.getBlockState(MOTOR).is(PDBlocks.PORTABLE_MOTORS.get(tier).get()),
-			tier + " motor block after placing, found " + helper.getBlockState(MOTOR) + " result=" + placed + " floor=" + helper.getBlockState(MOTOR.below()) + " above=" + helper.getBlockState(MOTOR.above()) + " stack=" + stack + " floorBefore=" + floorBefore + " mayBuild=" + player.getAbilities().mayBuild);
+			tier + " motor block after placing, found " + helper.getBlockState(MOTOR));
 
 		PortableMotorBlockEntity motor = helper.getBlockEntity(MOTOR);
 		helper.assertValueEqual(motor.getBattery().getEnergyStored(), charge, tier + " charge after placing");
