@@ -9,9 +9,8 @@ displayName = "${mod_name}"
 authors = "${mod_authors}"
 description = '''${mod_description}'''
 logoFile = "logo.png"
-# Fill these in once the project has a public home:
-# displayURL = "https://..."
-# issueTrackerURL = "https://..."
+displayURL = "https://github.com/ShadowPJ/create_pocketdynamo"
+issueTrackerURL = "https://github.com/ShadowPJ/create_pocketdynamo/issues"
 
 [[dependencies.${mod_id}]]
 modId = "neoforge"
