@@ -1,0 +1,7 @@
+{
+  "_comment": "PLACEHOLDER model. Replace with final art.",
+  "textures": {"cable": "create_pocketdynamo:block/energy_cable", "particle": "create_pocketdynamo:block/energy_cable"},
+  "elements": [
+    {"from": [5, 11, 5], "to": [11, 16, 11], "faces": {"north": {"texture": "#cable"}, "south": {"texture": "#cable"}, "east": {"texture": "#cable"}, "west": {"texture": "#cable"}, "up": {"texture": "#cable"}, "down": {"texture": "#cable"}}}
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "_comment": "PLACEHOLDER model. Replace with final art.",
+  "parent": "minecraft:block/block",
+  "textures": {
+    "top": "create_pocketdynamo:block/solar_panel_copper_top",
+    "side": "create_pocketdynamo:block/solar_panel_copper_side",
+    "particle": "create_pocketdynamo:block/solar_panel_copper_side"
+  },
+  "elements": [
+    {
+      "from": [0, 0, 0],
+      "to": [16, 4, 16],
+      "faces": {
+        "north": {"uv": [0, 12, 16, 16], "texture": "#side"},
+        "south": {"uv": [0, 12, 16, 16], "texture": "#side"},
+        "east":  {"uv": [0, 12, 16, 16], "texture": "#side"},
+        "west":  {"uv": [0, 12, 16, 16], "texture": "#side"},
+        "up":    {"uv": [0, 0, 16, 16], "texture": "#top"},
+        "down":  {"uv": [0, 0, 16, 16], "texture": "#side"}
+      }
+    }
+  ],
+  "display": {
+    "gui": {"rotation": [30, 135, 0], "scale": [0.7, 0.7, 0.7]},
+    "ground": {"scale": [0.5, 0.5, 0.5]},
+    "fixed": {"scale": [0.7, 0.7, 0.7]}
+  }
+}

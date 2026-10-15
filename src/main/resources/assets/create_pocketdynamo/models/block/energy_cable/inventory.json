@@ -1,0 +1,16 @@
+{
+  "_comment": "PLACEHOLDER model. Replace with final art.",
+  "textures": {"cable": "create_pocketdynamo:block/energy_cable", "particle": "create_pocketdynamo:block/energy_cable"},
+  "elements": [
+    {"from": [5, 5, 5], "to": [11, 11, 11], "faces": {"north": {"texture": "#cable"}, "south": {"texture": "#cable"}, "east": {"texture": "#cable"}, "west": {"texture": "#cable"}, "up": {"texture": "#cable"}, "down": {"texture": "#cable"}}},
+    {"from": [0, 5, 5], "to": [5, 11, 11], "faces": {"north": {"texture": "#cable"}, "south": {"texture": "#cable"}, "east": {"texture": "#cable"}, "west": {"texture": "#cable"}, "up": {"texture": "#cable"}, "down": {"texture": "#cable"}}},
+    {"from": [11, 5, 5], "to": [16, 11, 11], "faces": {"north": {"texture": "#cable"}, "south": {"texture": "#cable"}, "east": {"texture": "#cable"}, "west": {"texture": "#cable"}, "up": {"texture": "#cable"}, "down": {"texture": "#cable"}}}
+  ],
+  "display": {
+    "gui": {"rotation": [30, 135, 0], "scale": [0.8, 0.8, 0.8]},
+    "ground": {"scale": [0.5, 0.5, 0.5]},
+    "fixed": {"scale": [0.8, 0.8, 0.8]},
+    "thirdperson_righthand": {"rotation": [75, 45, 0], "translation": [0, 2.5, 0], "scale": [0.5, 0.5, 0.5]},
+    "firstperson_righthand": {"rotation": [0, 135, 0], "scale": [0.5, 0.5, 0.5]}
+  }
+}

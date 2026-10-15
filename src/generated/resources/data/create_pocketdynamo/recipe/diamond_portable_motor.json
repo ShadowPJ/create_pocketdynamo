@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "key": {
+    "D": {
+      "item": "minecraft:diamond"
+    },
+    "K": {
+      "item": "create:brass_casing"
+    },
+    "P": {
+      "item": "create:precision_mechanism"
+    },
+    "R": {
+      "item": "minecraft:redstone_block"
+    },
+    "S": {
+      "item": "create:shaft"
+    }
+  },
+  "pattern": [
+    "DPD",
+    "RKR",
+    "DSD"
+  ],
+  "result": {
+    "count": 1,
+    "id": "create_pocketdynamo:diamond_portable_motor"
+  }
+}

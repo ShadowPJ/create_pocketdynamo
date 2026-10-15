@@ -1,0 +1,11 @@
+{
+  "values": [
+    "create_pocketdynamo:copper_portable_motor",
+    "create_pocketdynamo:brass_portable_motor",
+    "create_pocketdynamo:diamond_portable_motor",
+    "create_pocketdynamo:copper_solar_panel",
+    "create_pocketdynamo:brass_solar_panel",
+    "create_pocketdynamo:diamond_solar_panel",
+    "create_pocketdynamo:energy_cable"
+  ]
+}

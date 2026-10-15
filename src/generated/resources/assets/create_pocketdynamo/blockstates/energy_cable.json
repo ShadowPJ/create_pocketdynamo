@@ -1,0 +1,57 @@
+{
+  "multipart": [
+    {
+      "apply": {
+        "model": "create_pocketdynamo:block/energy_cable/core"
+      }
+    },
+    {
+      "apply": {
+        "model": "create_pocketdynamo:block/energy_cable/arm_down"
+      },
+      "when": {
+        "down": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "create_pocketdynamo:block/energy_cable/arm_up"
+      },
+      "when": {
+        "up": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "create_pocketdynamo:block/energy_cable/arm_north"
+      },
+      "when": {
+        "north": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "create_pocketdynamo:block/energy_cable/arm_south"
+      },
+      "when": {
+        "south": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "create_pocketdynamo:block/energy_cable/arm_west"
+      },
+      "when": {
+        "west": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "create_pocketdynamo:block/energy_cable/arm_east"
+      },
+      "when": {
+        "east": "true"
+      }
+    }
+  ]
+}

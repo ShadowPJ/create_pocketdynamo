@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "key": {
+    "C": {
+      "item": "create:copper_sheet"
+    },
+    "G": {
+      "item": "minecraft:glass"
+    },
+    "L": {
+      "item": "minecraft:lapis_lazuli"
+    }
+  },
+  "pattern": [
+    "GGG",
+    "LLL",
+    "CCC"
+  ],
+  "result": {
+    "count": 1,
+    "id": "create_pocketdynamo:copper_solar_panel"
+  }
+}

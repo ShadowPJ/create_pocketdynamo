@@ -1,0 +1,9 @@
+{
+  "motor.start": {
+    "subtitle": "create_pocketdynamo.subtitle.motor_start",
+    "sounds": [
+      {"name": "minecraft:block/beacon/activate", "pitch": 1.6, "volume": 0.5},
+      {"name": "minecraft:block/respawn_anchor/charge1", "pitch": 1.3, "volume": 0.6}
+    ]
+  }
+}

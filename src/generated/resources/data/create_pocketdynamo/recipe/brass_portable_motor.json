@@ -1,0 +1,33 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "key": {
+    "B": {
+      "item": "create:brass_sheet"
+    },
+    "G": {
+      "item": "minecraft:gold_ingot"
+    },
+    "K": {
+      "item": "create:brass_casing"
+    },
+    "R": {
+      "item": "minecraft:redstone_block"
+    },
+    "S": {
+      "item": "create:shaft"
+    },
+    "T": {
+      "item": "create:electron_tube"
+    }
+  },
+  "pattern": [
+    "BTB",
+    "RKR",
+    "GSG"
+  ],
+  "result": {
+    "count": 1,
+    "id": "create_pocketdynamo:brass_portable_motor"
+  }
+}

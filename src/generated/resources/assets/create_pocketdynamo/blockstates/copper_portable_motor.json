@@ -1,0 +1,26 @@
+{
+  "variants": {
+    "facing=down": {
+      "model": "create_pocketdynamo:block/portable_motor/copper_vertical",
+      "x": 180
+    },
+    "facing=east": {
+      "model": "create_pocketdynamo:block/portable_motor/copper",
+      "y": 270
+    },
+    "facing=north": {
+      "model": "create_pocketdynamo:block/portable_motor/copper",
+      "y": 180
+    },
+    "facing=south": {
+      "model": "create_pocketdynamo:block/portable_motor/copper"
+    },
+    "facing=up": {
+      "model": "create_pocketdynamo:block/portable_motor/copper_vertical"
+    },
+    "facing=west": {
+      "model": "create_pocketdynamo:block/portable_motor/copper",
+      "y": 90
+    }
+  }
+}

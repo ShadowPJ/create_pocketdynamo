@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "key": {
+    "C": {
+      "item": "create:copper_sheet"
+    },
+    "K": {
+      "item": "create:copper_casing"
+    },
+    "R": {
+      "item": "minecraft:redstone_block"
+    },
+    "S": {
+      "item": "create:shaft"
+    },
+    "T": {
+      "item": "create:electron_tube"
+    }
+  },
+  "pattern": [
+    "CTC",
+    "RKR",
+    " S "
+  ],
+  "result": {
+    "count": 1,
+    "id": "create_pocketdynamo:copper_portable_motor"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "_comment": "PLACEHOLDER tier model: only swaps the body texture of the shared base model.",
+  "parent": "create_pocketdynamo:block/portable_motor/block",
+  "textures": {
+    "body": "create_pocketdynamo:block/portable_motor_copper",
+    "particle": "create_pocketdynamo:block/portable_motor_copper"
+  }
+}

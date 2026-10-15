@@ -1,0 +1,26 @@
+{
+  "variants": {
+    "facing=down": {
+      "model": "create_pocketdynamo:block/portable_motor/brass_vertical",
+      "x": 180
+    },
+    "facing=east": {
+      "model": "create_pocketdynamo:block/portable_motor/brass",
+      "y": 270
+    },
+    "facing=north": {
+      "model": "create_pocketdynamo:block/portable_motor/brass",
+      "y": 180
+    },
+    "facing=south": {
+      "model": "create_pocketdynamo:block/portable_motor/brass"
+    },
+    "facing=up": {
+      "model": "create_pocketdynamo:block/portable_motor/brass_vertical"
+    },
+    "facing=west": {
+      "model": "create_pocketdynamo:block/portable_motor/brass",
+      "y": 90
+    }
+  }
+}

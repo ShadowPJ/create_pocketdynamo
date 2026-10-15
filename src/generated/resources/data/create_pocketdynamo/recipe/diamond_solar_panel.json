@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "key": {
+    "B": {
+      "item": "create:brass_sheet"
+    },
+    "D": {
+      "item": "minecraft:diamond"
+    },
+    "G": {
+      "item": "minecraft:glass"
+    },
+    "P": {
+      "item": "create:precision_mechanism"
+    }
+  },
+  "pattern": [
+    "GGG",
+    "DPD",
+    "BBB"
+  ],
+  "result": {
+    "count": 1,
+    "id": "create_pocketdynamo:diamond_solar_panel"
+  }
+}

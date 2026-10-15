@@ -1,0 +1,27 @@
+# Gradle
+.gradle/
+build/
+.tools/
+
+# Dev runs
+run/
+run-data/
+
+# Datagen hash cache (the generated resources themselves ARE committed)
+src/generated/resources/.cache/
+
+# IDE
+.idea/
+*.iml
+*.ipr
+*.iws
+.vscode/
+.settings/
+.project
+.classpath
+bin/
+out/
+
+# Secrets (publishing tokens must live outside the repo)
+*.token
+local.properties

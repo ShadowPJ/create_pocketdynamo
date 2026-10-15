@@ -1,0 +1,26 @@
+{
+  "variants": {
+    "facing=down": {
+      "model": "create_pocketdynamo:block/portable_motor/diamond_vertical",
+      "x": 180
+    },
+    "facing=east": {
+      "model": "create_pocketdynamo:block/portable_motor/diamond",
+      "y": 270
+    },
+    "facing=north": {
+      "model": "create_pocketdynamo:block/portable_motor/diamond",
+      "y": 180
+    },
+    "facing=south": {
+      "model": "create_pocketdynamo:block/portable_motor/diamond"
+    },
+    "facing=up": {
+      "model": "create_pocketdynamo:block/portable_motor/diamond_vertical"
+    },
+    "facing=west": {
+      "model": "create_pocketdynamo:block/portable_motor/diamond",
+      "y": 90
+    }
+  }
+}

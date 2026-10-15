@@ -1,0 +1,31 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "function": "minecraft:copy_components",
+              "include": [
+                "create_pocketdynamo:stored_energy",
+                "create_pocketdynamo:target_speed"
+              ],
+              "source": "block_entity"
+            }
+          ],
+          "name": "create_pocketdynamo:brass_portable_motor"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "create_pocketdynamo:blocks/brass_portable_motor"
+}
