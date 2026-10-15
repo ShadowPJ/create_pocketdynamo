@@ -15,7 +15,7 @@ done, wrench it back into your inventory. It remembers its charge and its speed.
 Three tiers of motors, three tiers of solar panels to keep them fed, and an energy cable to bring the power from a
 field of panels to wherever you work.
 
-> **Status: early development (0.1.0), not released yet.** Everything works and is covered by automated tests, but the
+> **Status: beta (0.1.0-beta.1).** Everything works and is covered by automated tests, but the
 > textures, the models and the logo are first drafts and block ids may still change before 1.0. Feedback is very welcome.
 
 ## How it plays

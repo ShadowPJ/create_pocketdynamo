@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 # Prints the CHANGELOG.md section of one version, to be used as the release notes.
 #
-#   tools/release-notes.sh 0.1.0                   # fails if the entry is missing or still says "Unreleased"
-#   tools/release-notes.sh 0.1.0 --allow-unreleased  # dry runs: only warns about "Unreleased"
+#   tools/release-notes.sh 0.1.0-beta.1            # fails if the entry is missing or still says "Unreleased"
+#   tools/release-notes.sh 0.1.0-beta.1 --allow-unreleased  # dry runs: only warns about "Unreleased"
 set -euo pipefail
 
 version="${1:?usage: release-notes.sh <version> [--allow-unreleased]}"
