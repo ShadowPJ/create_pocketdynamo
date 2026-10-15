@@ -26,7 +26,7 @@ First playable version.
   with `./gradlew runGameTestServer`; CI runs them on every pull request.
 
 ### Known limitations
-- Textures, models and the logo are placeholders.
+- Textures, models and the logo are first drafts, not final art.
 - Cables only carry energy that producers push into them.
 - Not covered by the GameTests, and not yet tested by hand either:
   - EMI at runtime (it needs a client; the GameTests run on a headless server).
