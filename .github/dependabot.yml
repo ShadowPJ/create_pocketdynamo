@@ -1,0 +1,18 @@
+version: 2
+updates:
+  # The workflow's actions are pinned by commit SHA, so they never move on their own.
+  # Dependabot opens a pull request when a new release appears and updates the SHA and the version comment.
+  #
+  # Gradle is deliberately not listed: dependency versions live in gradle.properties and every artifact is
+  # checksum-verified through gradle/verification-metadata.xml, which Dependabot cannot regenerate. Update those by
+  # hand as described in CONTRIBUTING.md.
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+    commit-message:
+      prefix: "ci"
+    groups:
+      actions:
+        patterns:
+          - "*"
