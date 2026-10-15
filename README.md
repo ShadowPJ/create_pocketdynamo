@@ -16,7 +16,7 @@ Three tiers of motors, three tiers of solar panels to keep them fed, and an ener
 field of panels to wherever you work.
 
 > **Status: early development (0.1.0), not released yet.** Everything works and is covered by automated tests, but the
-> textures, the models and the logo are placeholders and block ids may still change before 1.0. Feedback is very welcome.
+> textures, the models and the logo are first drafts and block ids may still change before 1.0. Feedback is very welcome.
 
 ## How it plays
 
@@ -129,7 +129,7 @@ Balance is meant to be tuned. Every number above is a server setting, one file p
 
 ## Known limitations
 
-- Textures, models and the logo are placeholders.
+- Textures, models and the logo are first drafts, not final art.
 - Cables only carry energy that producers push into them.
 - Not yet tested with EMI at runtime, with several players on the same motor, or with a motor on a moving contraption.
 

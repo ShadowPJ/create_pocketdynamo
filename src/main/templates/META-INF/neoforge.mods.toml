@@ -8,7 +8,6 @@ version = "${mod_version}"
 displayName = "${mod_name}"
 authors = "${mod_authors}"
 description = '''${mod_description}'''
-# PLACEHOLDER logo (generated); replace src/main/resources/logo.png with real art.
 logoFile = "logo.png"
 # Fill these in once the project has a public home:
 # displayURL = "https://..."
