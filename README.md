@@ -77,8 +77,27 @@ Use it to bring power from a field of panels to a motor placed away from them.
 
 Recipes use only vanilla items and Create items. With JEI or EMI installed, every item also has a description page.
 
+### Portable Motors
+
+| Copper | Brass | Diamond |
+|:---:|:---:|:---:|
+| <img src="docs/images/recipe-copper-portable-motor.png" width="270" alt="Copper Portable Motor: copper sheets and an electron tube on top, redstone blocks around a copper casing, a shaft below"> | <img src="docs/images/recipe-brass-portable-motor.png" width="270" alt="Brass Portable Motor: brass sheets and an electron tube on top, redstone blocks around a brass casing, gold ingots and a shaft below"> | <img src="docs/images/recipe-diamond-portable-motor.png" width="270" alt="Diamond Portable Motor: diamonds and a precision mechanism on top, redstone blocks around a brass casing, diamonds and a shaft below"> |
+
+### Solar Panels
+
+| Copper | Brass | Diamond |
+|:---:|:---:|:---:|
+| <img src="docs/images/recipe-copper-solar-panel.png" width="270" alt="Copper Solar Panel: three glass, three lapis lazuli, three copper sheets"> | <img src="docs/images/recipe-brass-solar-panel.png" width="270" alt="Brass Solar Panel: three glass, lapis lazuli around an electron tube, three brass sheets"> | <img src="docs/images/recipe-diamond-solar-panel.png" width="270" alt="Diamond Solar Panel: three glass, diamonds around a precision mechanism, three brass sheets"> |
+
+### Energy Cable
+
+Three copper sheets over three redstone dust make **six** cables.
+
+The images come from the in-game recipe viewer; the sheets, casings, shaft, electron tube and precision mechanism are
+items of Create.
+
 <details>
-<summary>Crafting grids</summary>
+<summary>The same recipes as text</summary>
 
 Legend: `S` shaft, `T` electron tube, `K` casing, `R` redstone block, `P` precision mechanism, `L` lapis lazuli,
 `D` diamond, `C` copper sheet, `B` brass sheet, `_` empty. `G` and the casing change from recipe to recipe, so the last
