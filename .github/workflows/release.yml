@@ -63,8 +63,11 @@ jobs:
       - name: Check translations
         run: java tools/LangCheck.java
 
+      # Gradle exits 0 even when the test server fails to start, so also require the "tests passed" line.
       - name: Build and test
-        run: ./gradlew build runGameTestServer --console=plain
+        run: |
+          ./gradlew build runGameTestServer --console=plain | tee build.log
+          grep -q "required tests passed" build.log
 
       - name: Check the jar
         env:

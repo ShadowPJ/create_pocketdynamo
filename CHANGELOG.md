@@ -3,6 +3,14 @@
 All notable changes to this project are documented here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## [0.1.0-beta.2] - 2026-10-15
+
+Same as 0.1.0-beta.1, with one fix.
+
+### Fixed
+- The mod asked for Create 6.0.11 or newer, so it refused to load in packs that ship Create 6.0.10. It now accepts
+  Create 6.0.10 and newer in the 6.0 line. The GameTests pass on both 6.0.10 and 6.0.11.
+
 ## [0.1.0-beta.1] - 2026-10-15
 
 First public beta.

@@ -109,7 +109,11 @@ sourceSets.main.resources { srcDir 'src/generated/resources' }
 
 dependencies {
     // Create and the libraries it normally jar-in-jars; in the dev environment they must be explicit.
-    implementation("com.simibubi.create:create-${minecraft_version}:${create_version}")
+    // Create's own pom lists optional compat mods (Farmers Delight, FTB...) that are not on our repositories, and its
+    // runtime libraries are declared below, so its transitive dependencies are skipped.
+    implementation("com.simibubi.create:create-${minecraft_version}:${create_version}") { transitive = false }
+    // Create 6.0.10 needs Vanillin at runtime (6.0.11 no longer lists it).
+    runtimeOnly("dev.engine-room.vanillin:vanillin-neoforge-${minecraft_version}:1.1.3-41")
     implementation("net.createmod.ponder:ponder-neoforge:${ponder_version}+mc${minecraft_version}")
     compileOnly("dev.engine-room.flywheel:flywheel-neoforge-api-${minecraft_version}:${flywheel_version}")
     runtimeOnly("dev.engine-room.flywheel:flywheel-neoforge-${minecraft_version}:${flywheel_version}")

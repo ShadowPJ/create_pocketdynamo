@@ -22,14 +22,14 @@ Text and settings ready to paste into <https://modrinth.com/project/create-pocke
 
 | Field | Value |
 |---|---|
-| Version number | `0.1.0-beta.1` |
-| Version title | `0.1.0-beta.1` |
+| Version number | `0.1.0-beta.2` |
+| Version title | `0.1.0-beta.2` |
 | Release channel | **Beta** |
 | Loaders | NeoForge |
 | Game versions | 1.21.1 |
-| File | `create_pocketdynamo-0.1.0-beta.1.jar` from the GitHub Release |
+| File | `create_pocketdynamo-0.1.0-beta.2.jar` from the GitHub Release |
 | Dependencies | **Create** (required), **JEI** (optional), **EMI** (optional) |
-| Changelog | the `0.1.0-beta.1` entry of `CHANGELOG.md` |
+| Changelog | the `0.1.0-beta.2` entry of `CHANGELOG.md` |
 
 If a dependency is not found by its slug (`create`, `jei`, `emi`), search for it by name in the dependency picker.
 
@@ -107,7 +107,7 @@ Every recipe uses only vanilla and Create items. The recipe images are in the ga
 
 ## Compatibility
 
-- Minecraft 1.21.1, NeoForge 21.1.219 or newer, Create 6.0.11 or newer in the 6.0 line, Java 21.
+- Minecraft 1.21.1, NeoForge 21.1.219 or newer, Create 6.0.10 or newer in the 6.0 line, Java 21.
 - The motor battery accepts FE from other mods, and the panels feed any block that accepts FE.
 - JEI and EMI are optional and add a description page for each item. Install one of them, not both.
 - Ponder scenes explain the motor, the battery and the panels: hold <kbd>W</kbd> over an item.
