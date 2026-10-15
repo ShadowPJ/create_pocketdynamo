@@ -14,12 +14,28 @@ base {
 
 java.toolchain.languageVersion = JavaLanguageVersion.of(21)
 
+// Each remote repository only serves the groups listed here, so a name clash on another host cannot win.
 repositories {
-    mavenLocal()
-    maven { url = 'https://maven.createmod.net' }              // Create, Ponder, Flywheel
-    maven { url = 'https://maven.ithundxr.dev/snapshots' }     // Registrate
-    maven { url = 'https://raw.githubusercontent.com/Fuzss/modresources/main/maven' } // NeoForge config API port, needed by Ponder
-    maven { url = 'https://maven.blamejared.com' }             // JEI
+    maven {                                                    // Create, Ponder, Flywheel
+        url = 'https://maven.createmod.net'
+        content {
+            includeGroupAndSubgroups 'com.simibubi'
+            includeGroupAndSubgroups 'net.createmod'
+            includeGroupAndSubgroups 'dev.engine-room'
+        }
+    }
+    maven {                                                    // Registrate
+        url = 'https://maven.ithundxr.dev/snapshots'
+        content { includeGroupAndSubgroups 'com.tterrag' }
+    }
+    maven {                                                    // NeoForge config API port, needed by Ponder
+        url = 'https://raw.githubusercontent.com/Fuzss/modresources/main/maven'
+        content { includeGroupAndSubgroups 'fuzs' }
+    }
+    maven {                                                    // JEI
+        url = 'https://maven.blamejared.com'
+        content { includeGroupAndSubgroups 'mezz' }
+    }
     maven {                                                    // EMI (official maven, see EMI's README)
         url = 'https://repo.sleeping.town/'
         content { includeGroup 'dev.emi' }
