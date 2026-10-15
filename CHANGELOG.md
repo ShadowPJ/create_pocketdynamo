@@ -20,7 +20,17 @@ First playable version.
 - Per-tier balance in `serverconfig/create_pocketdynamo-server.toml`.
 - English and Spanish (`es_es`) translations, including Ponder scenes and viewer pages.
 
+### Tests
+- GameTests for the motor battery (charging, draining, restarting, cost by RPM), keeping charge and RPM when picked
+  up with a wrench, how the Energy Cable shares energy, and solar output by day, at night and in the rain. Run them
+  with `./gradlew runGameTestServer`; CI runs them on every pull request.
+
 ### Known limitations
 - Textures, models and the logo are placeholders.
 - Cables only carry energy that producers push into them.
-- Not yet tested with EMI at runtime, with multiple players, or with the motor on moving contraptions.
+- Not covered by the GameTests, and not yet tested by hand either:
+  - EMI at runtime (it needs a client; the GameTests run on a headless server).
+  - Several players at once (for example two people wrenching or charging the same motor).
+  - The motor on moving contraptions (a motor picked up by a Create contraption, or carried on one).
+  - Rendering, sounds and particles, which are client-side.
+  - Chunk unloading and reloading of a charged motor or a cable line.

@@ -11,11 +11,13 @@ You need a JDK 21 and nothing else; Gradle comes with the wrapper.
 ./gradlew build      # jar in build/libs
 ./gradlew runClient  # dev client with Create (and JEI by default)
 ./gradlew runData    # regenerates src/generated/resources
+./gradlew runGameTestServer  # runs the GameTests on a headless server
 ```
 
 ## Before you open a pull request
 
-1. **Build:** `./gradlew build` passes.
+1. **Build:** `./gradlew build` passes. If you changed how a motor, solar panel or cable behaves, also run
+   `./gradlew runGameTestServer`; the tests live in `src/gametest` and are not packed into the jar.
 2. **Generated files:** if you touched blocks, items, recipes, loot or English text, run `./gradlew runData` and commit
    the changes under `src/generated/resources`. They are committed on purpose.
 3. **Translations:** after changing any text, run `java tools/LangCheck.java`. It fails when `es_es.json` is missing a
@@ -25,8 +27,8 @@ You need a JDK 21 and nothing else; Gradle comes with the wrapper.
 5. **Changelog:** add a line to the entry of the version in progress in `CHANGELOG.md` for anything a player would
    notice.
 
-The CI workflow runs the build, the translation check, the Gradle wrapper validation and a secret scan on every pull
-request. It has to pass before merging.
+The CI workflow runs the build, the GameTests, the translation check, the Gradle wrapper validation and a secret scan
+on every pull request. It has to pass before merging.
 
 ## Dependencies
 
