@@ -60,6 +60,25 @@ Dependency checksums are verified through `gradle/verification-metadata.xml`. Wh
 
 Check the diff: only the artifacts you expect should appear.
 
+## Releasing (maintainers)
+
+1. Set `mod_version` in `gradle.properties`.
+2. In `CHANGELOG.md`, put the release date on that version's heading (`## [0.1.0] - 2026-10-20`). The release fails
+   while it still says `Unreleased`, and the entry becomes the release notes.
+3. Merge that change, then tag the merge commit with the same version and push the tag:
+
+   ```
+   git tag v0.1.0
+   git push origin v0.1.0
+   ```
+
+The `Release` workflow checks that the tag matches `mod_version`, runs the translation check, the build and the
+GameTests, checks the jar, and creates a GitHub Release with the jar. Versions containing `alpha`, `beta` or `rc` are
+marked as pre-releases. To rehearse without publishing, run **Actions > Release > Run workflow**: it does everything
+except create the release.
+
+Uploading to Modrinth and CurseForge is still manual.
+
 ## Commits and pull requests
 
 - Use [Conventional Commits](https://www.conventionalcommits.org/): `feat:`, `fix:`, `docs:`, `build:`, `ci:`,
