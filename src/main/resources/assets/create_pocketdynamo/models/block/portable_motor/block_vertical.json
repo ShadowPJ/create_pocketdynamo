@@ -1,10 +1,11 @@
 {
-  "_comment": "PLACEHOLDER model. Output shaft points UP (DOWN is this model rotated 180 on X). Replace with final art.",
+  "_comment": "Draft model. Output shaft points UP (DOWN is this model rotated 180 on X). UVs map the textures 1:1.",
   "parent": "minecraft:block/block",
   "textures": {
     "body": "create_pocketdynamo:block/portable_motor_copper",
     "front": "create_pocketdynamo:block/portable_motor_front",
-    "particle": "create_pocketdynamo:block/portable_motor_copper"
+    "particle": "create_pocketdynamo:block/portable_motor_copper",
+    "battery": "create_pocketdynamo:block/portable_motor_battery"
   },
   "elements": [
     {
@@ -12,12 +13,12 @@
       "from": [3, 0, 3],
       "to": [13, 12, 13],
       "faces": {
-        "north": {"uv": [0, 0, 16, 16], "texture": "#body"},
-        "south": {"uv": [0, 0, 16, 16], "texture": "#body"},
-        "east":  {"uv": [0, 0, 16, 16], "texture": "#body"},
-        "west":  {"uv": [0, 0, 16, 16], "texture": "#body"},
-        "up":    {"uv": [0, 0, 16, 16], "texture": "#front"},
-        "down":  {"uv": [0, 0, 16, 16], "texture": "#body"}
+        "north": {"uv": [0, 0, 12, 10], "texture": "#body", "rotation": 90},
+        "south": {"uv": [0, 0, 12, 10], "texture": "#body", "rotation": 90},
+        "east": {"uv": [0, 0, 12, 10], "texture": "#body", "rotation": 90},
+        "west": {"uv": [0, 0, 12, 10], "texture": "#body", "rotation": 90},
+        "up": {"uv": [3, 3, 13, 13], "texture": "#front"},
+        "down": {"uv": [1, 0, 11, 10], "texture": "#body"}
       }
     },
     {
@@ -25,11 +26,11 @@
       "from": [13, 2, 5],
       "to": [15, 10, 11],
       "faces": {
-        "north": {"uv": [0, 0, 16, 16], "texture": "#front"},
-        "south": {"uv": [0, 0, 16, 16], "texture": "#front"},
-        "east":  {"uv": [0, 0, 16, 16], "texture": "#front"},
-        "up":    {"uv": [0, 0, 16, 16], "texture": "#front"},
-        "down":  {"uv": [0, 0, 16, 16], "texture": "#front"}
+        "north": {"uv": [6, 0, 14, 2], "texture": "#battery", "rotation": 90},
+        "south": {"uv": [6, 0, 14, 2], "texture": "#battery", "rotation": 90},
+        "east": {"uv": [0, 0, 6, 8], "texture": "#battery"},
+        "up": {"uv": [0, 8, 6, 10], "texture": "#battery", "rotation": 90},
+        "down": {"uv": [0, 8, 6, 10], "texture": "#battery", "rotation": 90}
       }
     }
   ]
