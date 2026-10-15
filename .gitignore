@@ -25,3 +25,15 @@ out/
 # Secrets (publishing tokens must live outside the repo)
 *.token
 local.properties
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.jks
+*.keystore
+secrets/
+
+# Personal helper for the Claude GitHub plugin; not part of the addon
+tools/set-github-token.ps1
