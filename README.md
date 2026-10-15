@@ -93,6 +93,8 @@ Recipes use only vanilla items and Create items. With JEI or EMI installed, ever
 
 Three copper sheets over three redstone dust make **six** cables.
 
+<img src="docs/images/recipe-energy-cable.png" width="270" alt="Energy Cable: a row of three copper sheets above a row of three redstone dust gives six cables">
+
 The images come from the in-game recipe viewer; the sheets, casings, shaft, electron tube and precision mechanism are
 items of Create.
 
