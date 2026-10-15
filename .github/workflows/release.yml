@@ -1,0 +1,100 @@
+name: Release
+
+# Push a tag like v0.1.0 to build the mod and publish a GitHub Release with the jar and the CHANGELOG notes.
+# Run it by hand (Actions > Release > Run workflow) for a dry run: same checks and build, nothing is published.
+on:
+  push:
+    tags: ['v*']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+# Actions are pinned by commit SHA; the comment gives the release they point to.
+jobs:
+  release:
+    name: Build and publish
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    # Only this job can write to the repository, and only to create the release.
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Validate Gradle wrapper
+        uses: gradle/actions/wrapper-validation@3f5f9adaf7d9fecd50b5935e54106014257a94e6 # v6.4.0
+
+      - uses: actions/setup-java@de7274f081f381c8f8158605e0321c36c376e2e6 # v6.0.1
+        with:
+          distribution: temurin
+          java-version: '21'
+
+      - uses: gradle/actions/setup-gradle@3f5f9adaf7d9fecd50b5935e54106014257a94e6 # v6.4.0
+
+      - name: Read the version
+        id: version
+        run: |
+          version="$(sed -n 's/^mod_version=//p' gradle.properties)"
+          [ -n "$version" ] || { echo "mod_version not found in gradle.properties" >&2; exit 1; }
+          echo "version=$version" >> "$GITHUB_OUTPUT"
+
+      - name: Check that the tag matches mod_version
+        if: github.event_name == 'push'
+        env:
+          TAG: ${{ github.ref_name }}
+          VERSION: ${{ steps.version.outputs.version }}
+        run: |
+          if [ "$TAG" != "v$VERSION" ]; then
+            echo "Tag $TAG does not match mod_version $VERSION in gradle.properties" >&2
+            exit 1
+          fi
+
+      - name: Write the release notes
+        env:
+          VERSION: ${{ steps.version.outputs.version }}
+          DRY_RUN: ${{ github.event_name == 'workflow_dispatch' }}
+        run: |
+          flag=""
+          [ "$DRY_RUN" = "true" ] && flag="--allow-unreleased"
+          bash tools/release-notes.sh "$VERSION" $flag > release-notes.md
+          cat release-notes.md
+
+      - name: Check translations
+        run: java tools/LangCheck.java
+
+      - name: Build and test
+        run: ./gradlew build runGameTestServer --console=plain
+
+      - name: Check the jar
+        env:
+          VERSION: ${{ steps.version.outputs.version }}
+        run: |
+          jar="build/libs/create_pocketdynamo-${VERSION}.jar"
+          test -f "$jar" || { echo "Missing $jar" >&2; ls build/libs; exit 1; }
+          if unzip -l "$jar" | grep -q 'gametest'; then
+            echo "The jar contains GameTest classes" >&2
+            exit 1
+          fi
+          sha256sum "$jar"
+
+      - name: Upload the jar
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: create_pocketdynamo-jar
+          path: build/libs/create_pocketdynamo-${{ steps.version.outputs.version }}.jar
+          if-no-files-found: error
+
+      - name: Publish the GitHub Release
+        if: github.event_name == 'push'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ github.ref_name }}
+          VERSION: ${{ steps.version.outputs.version }}
+        run: |
+          prerelease=""
+          case "$VERSION" in *alpha* | *beta* | *rc*) prerelease="--prerelease" ;; esac
+          gh release create "$TAG" "build/libs/create_pocketdynamo-${VERSION}.jar" \
+            --title "Create: Pocket Dynamo ${VERSION}" \
+            --notes-file release-notes.md \
+            --verify-tag $prerelease

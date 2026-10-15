@@ -3,6 +3,7 @@
 
 # Scripts must keep their native endings or they break on the other platform.
 gradlew text eol=lf
+*.sh text eol=lf
 *.bat text eol=crlf
 
 # Never touch binary files.
