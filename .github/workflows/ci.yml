@@ -39,9 +39,17 @@ jobs:
       - name: Build
         run: ./gradlew build --console=plain
 
-      # Starts a headless dev server, runs every GameTest of the mod and exits non-zero if one fails.
-      - name: Run GameTests
-        run: ./gradlew runGameTestServer --console=plain
+      # Starts a headless dev server and runs every GameTest of the mod. Gradle exits 0 even when the server fails to
+      # start (for example on a dependency error), so the step also requires the "tests passed" line in the output.
+      - name: Run GameTests (Create 6.0.10, the minimum)
+        run: |
+          ./gradlew runGameTestServer --console=plain | tee gametest.log
+          grep -q "required tests passed" gametest.log
+
+      - name: Run GameTests (Create 6.0.11)
+        run: |
+          ./gradlew runGameTestServer -Pcreate_version=6.0.11-319 --console=plain | tee gametest.log
+          grep -q "required tests passed" gametest.log
 
       - name: Upload GameTest logs
         if: failure()

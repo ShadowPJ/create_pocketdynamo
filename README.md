@@ -15,7 +15,7 @@ done, wrench it back into your inventory. It remembers its charge and its speed.
 Three tiers of motors, three tiers of solar panels to keep them fed, and an energy cable to bring the power from a
 field of panels to wherever you work.
 
-> **Status: beta (0.1.0-beta.1).** Everything works and is covered by automated tests, but the
+> **Status: beta (0.1.0-beta.2).** Everything works and is covered by automated tests, but the
 > textures, the models and the logo are first drafts and block ids may still change before 1.0. Feedback is very welcome.
 
 ## How it plays
@@ -110,7 +110,7 @@ panels with cables.
 |---|---|
 | Minecraft | 1.21.1 |
 | Loader | NeoForge 21.1.219 or newer in the 21.1 line |
-| Create | 6.0.11 or newer in the 6.0 line |
+| Create | 6.0.10 or newer in the 6.0 line |
 | Java | 21 |
 
 - **Other mods' energy:** the motor battery accepts FE from any mod's cables and generators placed next to it, and the
