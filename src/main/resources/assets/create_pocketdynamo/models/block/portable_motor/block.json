@@ -1,10 +1,11 @@
 {
-  "_comment": "PLACEHOLDER model. Output shaft points SOUTH; the rotating half shaft is drawn by Flywheel/BER. Replace with final art.",
+  "_comment": "Draft model. Output shaft points SOUTH; the rotating half shaft is drawn by Flywheel/BER. UVs map the textures 1:1.",
   "parent": "minecraft:block/block",
   "textures": {
     "body": "create_pocketdynamo:block/portable_motor_copper",
     "front": "create_pocketdynamo:block/portable_motor_front",
-    "particle": "create_pocketdynamo:block/portable_motor_copper"
+    "particle": "create_pocketdynamo:block/portable_motor_copper",
+    "battery": "create_pocketdynamo:block/portable_motor_battery"
   },
   "elements": [
     {
@@ -12,12 +13,12 @@
       "from": [3, 3, 0],
       "to": [13, 13, 12],
       "faces": {
-        "north": {"uv": [0, 0, 16, 16], "texture": "#body"},
-        "south": {"uv": [0, 0, 16, 16], "texture": "#front"},
-        "east":  {"uv": [0, 0, 16, 16], "texture": "#body"},
-        "west":  {"uv": [0, 0, 16, 16], "texture": "#body"},
-        "up":    {"uv": [0, 0, 16, 16], "texture": "#body"},
-        "down":  {"uv": [0, 0, 16, 16], "texture": "#body"}
+        "north": {"uv": [1, 0, 11, 10], "texture": "#body"},
+        "south": {"uv": [3, 3, 13, 13], "texture": "#front"},
+        "east": {"uv": [0, 0, 12, 10], "texture": "#body"},
+        "west": {"uv": [0, 0, 12, 10], "texture": "#body"},
+        "up": {"uv": [0, 0, 12, 10], "texture": "#body", "rotation": 90},
+        "down": {"uv": [0, 0, 12, 10], "texture": "#body", "rotation": 90}
       }
     },
     {
@@ -25,11 +26,11 @@
       "from": [5, 13, 2],
       "to": [11, 15, 10],
       "faces": {
-        "north": {"uv": [0, 0, 16, 16], "texture": "#front"},
-        "south": {"uv": [0, 0, 16, 16], "texture": "#front"},
-        "east":  {"uv": [0, 0, 16, 16], "texture": "#front"},
-        "west":  {"uv": [0, 0, 16, 16], "texture": "#front"},
-        "up":    {"uv": [0, 0, 16, 16], "texture": "#front"}
+        "north": {"uv": [0, 8, 6, 10], "texture": "#battery"},
+        "south": {"uv": [0, 8, 6, 10], "texture": "#battery"},
+        "east": {"uv": [6, 0, 14, 2], "texture": "#battery"},
+        "west": {"uv": [6, 0, 14, 2], "texture": "#battery"},
+        "up": {"uv": [0, 0, 6, 8], "texture": "#battery"}
       }
     }
   ],
