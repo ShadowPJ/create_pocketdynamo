@@ -98,25 +98,6 @@ Three copper sheets over three redstone dust make **six** cables.
 The images come from the in-game recipe viewer; the sheets, casings, shaft, electron tube and precision mechanism are
 items of Create.
 
-<details>
-<summary>The same recipes as text</summary>
-
-Legend: `S` shaft, `T` electron tube, `K` casing, `R` redstone block, `P` precision mechanism, `L` lapis lazuli,
-`D` diamond, `C` copper sheet, `B` brass sheet, `_` empty. `G` and the casing change from recipe to recipe, so the last
-column spells them out.
-
-| Item | Pattern | Ingredients |
-|---|---|---|
-| Copper Portable Motor | `C T C` / `R K R` / `_ S _` | `K` copper casing, `C` copper sheet |
-| Brass Portable Motor | `B T B` / `R K R` / `G S G` | `K` brass casing, `B` brass sheet, `G` gold ingot |
-| Diamond Portable Motor | `D P D` / `R K R` / `D S D` | `K` brass casing |
-| Copper Solar Panel | `G G G` / `L L L` / `C C C` | `G` glass |
-| Brass Solar Panel | `G G G` / `L T L` / `B B B` | `G` glass |
-| Diamond Solar Panel | `G G G` / `D P D` / `B B B` | `G` glass |
-| Energy Cable (x6) | `C C C` / `R R R` | `R` redstone dust |
-
-</details>
-
 ## Learn it in game
 
 The mod has **Ponder** scenes (the in-game tutorials of Create): hold <kbd>W</kbd> while hovering over a motor or a
